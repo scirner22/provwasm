@@ -1,26 +1,25 @@
 use cosmwasm_std::{Addr, Coin, CosmosMsg, StdError, StdResult};
-use provwasm_std::types::provenance::msgfees::v1::MsgAssessCustomMsgFeeRequest;
 
-pub fn assess_custom_fee<S: Into<String>>(
-    amount: Coin,
-    name: Option<S>,
-    from: Addr,
-    recipient: Option<Addr>,
-) -> Result<CosmosMsg, StdError> {
-    let coin = provwasm_std::types::cosmos::base::v1beta1::Coin {
-        denom: amount.denom,
-        amount: amount.amount.to_string(),
-    };
-
-    Ok(MsgAssessCustomMsgFeeRequest {
-        name: name.map(|s| s.into()).unwrap_or("".to_string()),
-        amount: Some(coin),
-        recipient: recipient.unwrap_or(Addr::unchecked("")).to_string(),
-        from: validate_address(from)?.to_string(),
-        recipient_basis_points: "10000".to_string(),
-    }
-    .into())
-}
+// pub fn assess_custom_fee<S: Into<String>>(
+//     amount: Coin,
+//     name: Option<S>,
+//     from: Addr,
+//     recipient: Option<Addr>,
+// ) -> Result<CosmosMsg, StdError> {
+//     let coin = provwasm_std::types::cosmos::base::v1beta1::Coin {
+//         denom: amount.denom,
+//         amount: amount.amount.to_string(),
+//     };
+//
+//     Ok(MsgAssessCustomMsgFeeRequest {
+//         name: name.map(|s| s.into()).unwrap_or("".to_string()),
+//         amount: Some(coin),
+//         recipient: recipient.unwrap_or(Addr::unchecked("")).to_string(),
+//         from: validate_address(from)?.to_string(),
+//         recipient_basis_points: "10000".to_string(),
+//     }
+//     .into())
+// }
 
 /// A helper that ensures string params are non-empty.
 pub fn validate_string<S: Into<String>>(input: S, param_name: &str) -> StdResult<String> {

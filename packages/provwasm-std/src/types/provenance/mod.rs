@@ -1,5 +1,6 @@
 pub mod attribute;
 pub mod exchange;
+pub mod flatfees;
 pub mod hold;
 pub mod ibchooks;
 pub mod ibcratelimit;

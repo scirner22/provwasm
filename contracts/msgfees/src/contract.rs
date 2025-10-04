@@ -2,7 +2,7 @@ use cosmwasm_std::{entry_point, Addr, Coin, DepsMut, Env, MessageInfo, Response}
 use provwasm_std::types::cosmos::bank::v1beta1::MsgSend;
 
 use crate::error::ContractError;
-use crate::helpers::assess_custom_fee;
+// use crate::helpers::assess_custom_fee;
 use crate::msg::{ExecuteMsg, InitMsg};
 use crate::state::{State, CONFIG};
 
@@ -63,18 +63,18 @@ pub fn try_send_funds(
         .add_attribute("integration_test", "msgfees")
         .add_attribute("action", "provwasm.contracts.msgfees.try_send_funds");
 
-    if let Some(fee) = state.fee_amount {
-        // Create a message that will assess a custom fee
-        res = res.add_message(assess_custom_fee(
-            fee.to_owned(),
-            Some("std_contract_fee"),
-            env.contract.address.clone(),
-            state.fee_recipient.to_owned(),
-        )?);
-        res = res
-            .add_attribute("fee_recipient", format!("{:?}", &state.fee_recipient))
-            .add_attribute("fee_amount", format!("{:?}", &fee));
-    }
+    // if let Some(fee) = state.fee_amount {
+    //     // Create a message that will assess a custom fee
+    //     res = res.add_message(assess_custom_fee(
+    //         fee.to_owned(),
+    //         Some("std_contract_fee"),
+    //         env.contract.address.clone(),
+    //         state.fee_recipient.to_owned(),
+    //     )?);
+    //     res = res
+    //         .add_attribute("fee_recipient", format!("{:?}", &state.fee_recipient))
+    //         .add_attribute("fee_amount", format!("{:?}", &fee));
+    // }
 
     // Create a message that will send funds to the to_address.
     let send_funds = MsgSend {
@@ -101,7 +101,6 @@ mod tests {
     use cosmwasm_std::{attr, coin, AnyMsg, Binary, CosmosMsg};
     use provwasm_mocks::mock_provenance_dependencies;
     use provwasm_std::types::cosmos::base::v1beta1::Coin;
-    use provwasm_std::types::provenance::msgfees::v1::MsgAssessCustomMsgFeeRequest;
 
     #[test]
     fn init_valid() {
@@ -141,72 +140,72 @@ mod tests {
         )
     }
 
-    #[test]
-    fn send_funds_with_fees() {
-        // Init state
-        let mut deps = mock_provenance_dependencies();
-        let env = mock_env();
-        let info = message_info(&Addr::unchecked("sender"), &[coin(200_000, "nhash")]);
+    // #[test]
+    // fn send_funds_with_fees() {
+    //     // Init state
+    //     let mut deps = mock_provenance_dependencies();
+    //     let env = mock_env();
+    //     let info = message_info(&Addr::unchecked("sender"), &[coin(200_000, "nhash")]);
 
-        CONFIG
-            .save(
-                &mut deps.storage,
-                &State {
-                    fee_amount: Some(coin(100_000, "nhash")),
-                    fee_recipient: Some(Addr::unchecked("fee_address")),
-                },
-            )
-            .expect("failed to save test state");
+    //     CONFIG
+    //         .save(
+    //             &mut deps.storage,
+    //             &State {
+    //                 fee_amount: Some(coin(100_000, "nhash")),
+    //                 fee_recipient: Some(Addr::unchecked("fee_address")),
+    //             },
+    //         )
+    //         .expect("failed to save test state");
 
-        let msg = ExecuteMsg::SendFunds {
-            funds: coin(100_000, "nhash"),
-            to_address: Addr::unchecked("to_address"),
-        };
-        let res = execute(deps.as_mut(), env.clone(), info, msg).unwrap();
+    //     let msg = ExecuteMsg::SendFunds {
+    //         funds: coin(100_000, "nhash"),
+    //         to_address: Addr::unchecked("to_address"),
+    //     };
+    //     let res = execute(deps.as_mut(), env.clone(), info, msg).unwrap();
 
-        // Assert the correct message was created
-        assert_eq!(2, res.messages.len());
-        match &res.messages[0].msg {
-            CosmosMsg::Any(AnyMsg { type_url, value }) => {
-                let expected: Binary = MsgAssessCustomMsgFeeRequest {
-                    name: "std_contract_fee".to_string(),
-                    amount: Some(Coin {
-                        denom: "nhash".to_string(),
-                        amount: "100000".to_string(),
-                    }),
-                    recipient: "fee_address".to_string(),
-                    from: MOCK_CONTRACT_ADDR.to_string(),
-                    recipient_basis_points: "10000".to_string(),
-                }
-                .into();
+    //     // Assert the correct message was created
+    //     assert_eq!(2, res.messages.len());
+    //     match &res.messages[0].msg {
+    //         CosmosMsg::Any(AnyMsg { type_url, value }) => {
+    //             let expected: Binary = MsgAssessCustomMsgFeeRequest {
+    //                 name: "std_contract_fee".to_string(),
+    //                 amount: Some(Coin {
+    //                     denom: "nhash".to_string(),
+    //                     amount: "100000".to_string(),
+    //                 }),
+    //                 recipient: "fee_address".to_string(),
+    //                 from: MOCK_CONTRACT_ADDR.to_string(),
+    //                 recipient_basis_points: "10000".to_string(),
+    //             }
+    //             .into();
 
-                assert_eq!(
-                    type_url,
-                    "/provenance.msgfees.v1.MsgAssessCustomMsgFeeRequest"
-                );
-                assert_eq!(value, &expected)
-            }
-            _ => panic!("unexpected cosmos message"),
-        }
+    //             assert_eq!(
+    //                 type_url,
+    //                 "/provenance.msgfees.v1.MsgAssessCustomMsgFeeRequest"
+    //             );
+    //             assert_eq!(value, &expected)
+    //         }
+    //         _ => panic!("unexpected cosmos message"),
+    //     }
 
-        match &res.messages[1].msg {
-            CosmosMsg::Any(AnyMsg { type_url, value }) => {
-                let expected: Binary = MsgSend {
-                    from_address: MOCK_CONTRACT_ADDR.to_string(),
-                    to_address: "to_address".to_string(),
-                    amount: vec![Coin {
-                        denom: "nhash".to_string(),
-                        amount: "100000".to_string(),
-                    }],
-                }
-                .into();
+    //     match &res.messages[1].msg {
+    //         CosmosMsg::Any(AnyMsg { type_url, value }) => {
+    //             let expected: Binary = MsgSend {
+    //                 from_address: MOCK_CONTRACT_ADDR.to_string(),
+    //                 to_address: "to_address".to_string(),
+    //                 amount: vec![Coin {
+    //                     denom: "nhash".to_string(),
+    //                     amount: "100000".to_string(),
+    //                 }],
+    //             }
+    //             .into();
 
-                assert_eq!(type_url, "/cosmos.bank.v1beta1.MsgSend");
-                assert_eq!(value, &expected)
-            }
-            _ => panic!("unexpected cosmos message"),
-        }
-    }
+    //             assert_eq!(type_url, "/cosmos.bank.v1beta1.MsgSend");
+    //             assert_eq!(value, &expected)
+    //         }
+    //         _ => panic!("unexpected cosmos message"),
+    //     }
+    // }
 
     #[test]
     fn send_funds_without_fees() {
