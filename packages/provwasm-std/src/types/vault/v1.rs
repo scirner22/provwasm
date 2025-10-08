@@ -768,9 +768,13 @@ pub struct MsgCreateVaultRequest {
 }
 /// MsgCreateVaultResponse is the response message for the CreateVault endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
+#[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
 #[proto_message(type_url = "/vault.v1.MsgCreateVaultResponse")]
-pub struct MsgCreateVaultResponse {}
+pub struct MsgCreateVaultResponse {
+    /// vault_address is the bech32 address of the newly created vault.
+    #[prost(string, tag = "1")]
+    pub vault_address: ::prost::alloc::string::String,
+}
 /// MsgSwapInRequest is the request message for depositing underlying assets into a vault in exchange for shares.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
@@ -788,9 +792,13 @@ pub struct MsgSwapInRequest {
 }
 /// MsgSwapInResponse is the response message for a successful SwapIn.
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
+#[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
 #[proto_message(type_url = "/vault.v1.MsgSwapInResponse")]
-pub struct MsgSwapInResponse {}
+pub struct MsgSwapInResponse {
+    /// shares_received is the amount of vault shares minted to the depositor.
+    #[prost(message, optional, tag = "1")]
+    pub shares_received: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+}
 /// MsgSwapOutRequest is the request message for redeeming vault shares in exchange for underlying assets.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
