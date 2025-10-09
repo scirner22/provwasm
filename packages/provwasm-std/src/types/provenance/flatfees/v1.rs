@@ -139,7 +139,7 @@ pub struct QueryMsgFeeResponse {
 }
 /// QueryCalculateTxFeesRequest is the request type for the CalculateTxFees query.
 #[allow(clippy::derive_partial_eq_without_eq)]
-#[derive(Clone, PartialEq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
+#[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
 #[proto_message(type_url = "/provenance.flatfees.v1.QueryCalculateTxFeesRequest")]
 #[proto_query(
     path = "/provenance.flatfees.v1.Query/CalculateTxFees",

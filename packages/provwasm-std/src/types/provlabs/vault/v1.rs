@@ -2,7 +2,7 @@ use provwasm_proc_macro::CosmwasmExt;
 /// EventDeposit is an event emitted when assets are deposited into a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventDeposit")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventDeposit")]
 pub struct EventDeposit {
     /// caller is the address of the account that initiated the deposit.
     #[prost(string, tag = "1")]
@@ -23,7 +23,7 @@ pub struct EventDeposit {
 /// EventWithdraw is an event emitted when assets are withdrawn from a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventWithdraw")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventWithdraw")]
 pub struct EventWithdraw {
     /// caller is the address of the account that initiated the withdrawal.
     #[prost(string, tag = "1")]
@@ -47,7 +47,7 @@ pub struct EventWithdraw {
 /// EventVaultCreated is an event emitted when a vault is created.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventVaultCreated")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventVaultCreated")]
 pub struct EventVaultCreated {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -65,7 +65,7 @@ pub struct EventVaultCreated {
 /// EventSwapIn is an event emitted when assets are swapped in for vault shares.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventSwapIn")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventSwapIn")]
 pub struct EventSwapIn {
     /// owner is the address of the account that initiated the swap.
     #[prost(string, tag = "1")]
@@ -83,7 +83,7 @@ pub struct EventSwapIn {
 /// EventSwapOut is an event emitted when vault shares are swapped out for underlying assets.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventSwapOut")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventSwapOut")]
 pub struct EventSwapOut {
     /// owner is the address of the account that initiated the swap.
     #[prost(string, tag = "1")]
@@ -101,7 +101,7 @@ pub struct EventSwapOut {
 /// EventVaultReconcile is an event emitted when a vault's interest is reconciled.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventVaultReconcile")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventVaultReconcile")]
 pub struct EventVaultReconcile {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -125,7 +125,7 @@ pub struct EventVaultReconcile {
 /// EventVaultInterestChange is an event emitted when a vault's interest rate is changed.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventVaultInterestChange")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventVaultInterestChange")]
 pub struct EventVaultInterestChange {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -140,7 +140,7 @@ pub struct EventVaultInterestChange {
 /// EventInterestDeposit is an event emitted when funds are deposited for paying interest.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventInterestDeposit")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventInterestDeposit")]
 pub struct EventInterestDeposit {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -155,7 +155,7 @@ pub struct EventInterestDeposit {
 /// EventInterestWithdrawal is an event emitted when unused interest funds are withdrawn.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventInterestWithdrawal")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventInterestWithdrawal")]
 pub struct EventInterestWithdrawal {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -170,7 +170,7 @@ pub struct EventInterestWithdrawal {
 /// EventToggleSwapIn is an event emitted when swap-in operations are enabled or disabled for a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventToggleSwapIn")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventToggleSwapIn")]
 pub struct EventToggleSwapIn {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -185,7 +185,7 @@ pub struct EventToggleSwapIn {
 /// EventToggleSwapOut is an event emitted when swap-out operations are enabled or disabled for a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventToggleSwapOut")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventToggleSwapOut")]
 pub struct EventToggleSwapOut {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -200,7 +200,7 @@ pub struct EventToggleSwapOut {
 /// EventDepositPrincipalFunds is an event emitted when principal funds are deposited by the admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventDepositPrincipalFunds")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventDepositPrincipalFunds")]
 pub struct EventDepositPrincipalFunds {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -215,7 +215,7 @@ pub struct EventDepositPrincipalFunds {
 /// EventWithdrawPrincipalFunds is an event emitted when principal funds are withdrawn by the admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventWithdrawPrincipalFunds")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventWithdrawPrincipalFunds")]
 pub struct EventWithdrawPrincipalFunds {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -230,7 +230,7 @@ pub struct EventWithdrawPrincipalFunds {
 /// EventMinInterestRateUpdated is emitted when the minimum interest rate is updated.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventMinInterestRateUpdated")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventMinInterestRateUpdated")]
 pub struct EventMinInterestRateUpdated {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -246,7 +246,7 @@ pub struct EventMinInterestRateUpdated {
 /// EventMaxInterestRateUpdated is emitted when the maximum interest rate is updated.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventMaxInterestRateUpdated")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventMaxInterestRateUpdated")]
 pub struct EventMaxInterestRateUpdated {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -262,7 +262,7 @@ pub struct EventMaxInterestRateUpdated {
 /// EventSwapOutRequested is emitted when a user successfully queues a swap out.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventSwapOutRequested")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventSwapOutRequested")]
 pub struct EventSwapOutRequested {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -283,7 +283,7 @@ pub struct EventSwapOutRequested {
 /// EventSwapOutCompleted is emitted when a pending swap out is successfully processed.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventSwapOutCompleted")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventSwapOutCompleted")]
 pub struct EventSwapOutCompleted {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -302,7 +302,7 @@ pub struct EventSwapOutCompleted {
 /// escrowed shares are returned.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventSwapOutRefunded")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventSwapOutRefunded")]
 pub struct EventSwapOutRefunded {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -323,7 +323,7 @@ pub struct EventSwapOutRefunded {
 /// EventPendingSwapOutExpedited is an event emitted when a pending swap-out is expedited by the admin.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventPendingSwapOutExpedited")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventPendingSwapOutExpedited")]
 pub struct EventPendingSwapOutExpedited {
     /// request_id is the numerical identifier of the pending swap-out.
     #[prost(uint64, tag = "1")]
@@ -338,7 +338,7 @@ pub struct EventPendingSwapOutExpedited {
 /// EventVaultPaused is emitted when a vault is paused.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventVaultPaused")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventVaultPaused")]
 pub struct EventVaultPaused {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -356,7 +356,7 @@ pub struct EventVaultPaused {
 /// EventVaultUnpaused is emitted when a vault is unpaused.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventVaultUnpaused")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventVaultUnpaused")]
 pub struct EventVaultUnpaused {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -371,7 +371,7 @@ pub struct EventVaultUnpaused {
 /// EventBridgeAddressSet is emitted when the bridge address for a vault is configured or updated.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventBridgeAddressSet")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventBridgeAddressSet")]
 pub struct EventBridgeAddressSet {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -386,7 +386,7 @@ pub struct EventBridgeAddressSet {
 /// EventBridgeToggled is emitted when the bridge functionality is enabled or disabled for a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventBridgeToggled")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventBridgeToggled")]
 pub struct EventBridgeToggled {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -401,7 +401,7 @@ pub struct EventBridgeToggled {
 /// EventBridgeMintShares is emitted when shares are minted via the bridge flow.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventBridgeMintShares")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventBridgeMintShares")]
 pub struct EventBridgeMintShares {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -416,7 +416,7 @@ pub struct EventBridgeMintShares {
 /// EventBridgeBurnShares is emitted when shares are burned via the bridge flow.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.EventBridgeBurnShares")]
+#[proto_message(type_url = "/provlabs.vault.v1.EventBridgeBurnShares")]
 pub struct EventBridgeBurnShares {
     /// vault_address is the bech32 address of the vault.
     #[prost(string, tag = "1")]
@@ -432,16 +432,17 @@ pub struct EventBridgeBurnShares {
 /// It is based on the ERC-4626 standard and builds upon the Provenance Marker module.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.VaultAccount")]
+#[proto_message(type_url = "/provlabs.vault.v1.VaultAccount")]
 pub struct VaultAccount {
     /// base_account cosmos account information including address and coin holdings.
     #[prost(message, optional, tag = "1")]
-    pub base_account: ::core::option::Option<super::super::cosmos::auth::v1beta1::BaseAccount>,
+    pub base_account:
+        ::core::option::Option<super::super::super::cosmos::auth::v1beta1::BaseAccount>,
     /// total_shares is the total number of shares that have ever been issued by the vault.
     /// It serves as the canonical supply-of-record for all shares, regardless of whether
     /// they are held locally on Provenance or externally (e.g., bridged).
     #[prost(message, optional, tag = "2")]
-    pub total_shares: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub total_shares: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
     /// underlying_asset is the vault’s single principal collateral AND valuation/base unit.
     /// - Exactly one denom.
     /// - Total Vault Value (TVV) and NAV-per-share are computed and reported in this denom.
@@ -499,7 +500,7 @@ pub struct VaultAccount {
     /// This value is used for all NAV calculations while the vault is paused to prevent
     /// apparent devaluation during collateral rebalancing. It is cleared upon unpausing.
     #[prost(message, optional, tag = "16")]
-    pub paused_balance: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub paused_balance: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
     /// paused_reason is a human-readable string explaining why the vault was paused, particularly for automatic pauses.
     #[prost(string, tag = "17")]
     pub paused_reason: ::prost::alloc::string::String,
@@ -516,19 +517,19 @@ pub struct VaultAccount {
 /// AccountBalance represents the coin balance of a single account.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.AccountBalance")]
+#[proto_message(type_url = "/provlabs.vault.v1.AccountBalance")]
 pub struct AccountBalance {
     /// address is the account address.
     #[prost(string, tag = "1")]
     pub address: ::prost::alloc::string::String,
     /// coins is the balance of the account.
     #[prost(message, repeated, tag = "2")]
-    pub coins: ::prost::alloc::vec::Vec<super::super::cosmos::base::v1beta1::Coin>,
+    pub coins: ::prost::alloc::vec::Vec<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// PendingSwapOut are swap outs that have not yet been processed and completed.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.PendingSwapOut")]
+#[proto_message(type_url = "/provlabs.vault.v1.PendingSwapOut")]
 pub struct PendingSwapOut {
     /// owner is the address initiating the swap out.
     #[prost(string, tag = "1")]
@@ -538,37 +539,47 @@ pub struct PendingSwapOut {
     pub vault_address: ::prost::alloc::string::String,
     /// shares are the shares that were escrowed by the user.
     #[prost(message, optional, tag = "3")]
-    pub shares: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub shares: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
     /// redeem_denom is the denomination of the asset to be redeemed.
     #[prost(string, tag = "4")]
     pub redeem_denom: ::prost::alloc::string::String,
 }
+/// QueueEntry is a (time, addr) pair used by the vault payout deferral queue.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueueEntry")]
+#[proto_message(type_url = "/provlabs.vault.v1.QueueEntry")]
 pub struct QueueEntry {
+    /// time is the UNIX timestamp (in seconds) when the entry becomes eligible.
     #[prost(uint64, tag = "1")]
     pub time: u64,
+    /// addr is the bech32 vault address associated with the entry.
     #[prost(string, tag = "2")]
     pub addr: ::prost::alloc::string::String,
 }
+/// PendingSwapOutQueueEntry represents a single pending swap-out request queued for later processing.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.PendingSwapOutQueueEntry")]
+#[proto_message(type_url = "/provlabs.vault.v1.PendingSwapOutQueueEntry")]
 pub struct PendingSwapOutQueueEntry {
+    /// time is the UNIX timestamp (in seconds) when this pending swap-out was enqueued or becomes eligible.
     #[prost(int64, tag = "1")]
     pub time: i64,
+    /// id is the unique identifier of the pending swap-out request.
     #[prost(uint64, tag = "2")]
     pub id: u64,
+    /// swap_out contains the pending swap-out details.
     #[prost(message, optional, tag = "3")]
     pub swap_out: ::core::option::Option<PendingSwapOut>,
 }
+/// PendingSwapOutQueue holds the latest sequence number and all queued swap-out entries.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.PendingSwapOutQueue")]
+#[proto_message(type_url = "/provlabs.vault.v1.PendingSwapOutQueue")]
 pub struct PendingSwapOutQueue {
+    /// latest_sequence_number is the most recently assigned pending swap-out ID.
     #[prost(uint64, tag = "1")]
     pub latest_sequence_number: u64,
+    /// entries contains all currently queued pending swap-out entries.
     #[prost(message, repeated, tag = "2")]
     pub entries: ::prost::alloc::vec::Vec<PendingSwapOutQueueEntry>,
 }
@@ -576,7 +587,7 @@ pub struct PendingSwapOutQueue {
 /// NOTE: payout verification queue is not imported or exported.  It will always be empty after endblocker processes it.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.GenesisState")]
+#[proto_message(type_url = "/provlabs.vault.v1.GenesisState")]
 pub struct GenesisState {
     /// vaults defines the vaults that exist at genesis.
     #[prost(message, repeated, tag = "1")]
@@ -593,20 +604,21 @@ pub struct GenesisState {
 /// QueryPendingSwapOutsRequest is the request message for the Query/PendingSwapOuts endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryPendingSwapOutsRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryPendingSwapOutsRequest")]
 #[proto_query(
-    path = "/vault.v1.Query/PendingSwapOuts",
+    path = "/provlabs.vault.v1.Query/PendingSwapOuts",
     response_type = QueryPendingSwapOutsResponse
 )]
 pub struct QueryPendingSwapOutsRequest {
     /// pagination defines an optional pagination for the request.
     #[prost(message, optional, tag = "1")]
-    pub pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+    pub pagination:
+        ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
 }
 /// QueryPendingSwapOutsResponse is the response message for the Query/PendingSwapOuts endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryPendingSwapOutsResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryPendingSwapOutsResponse")]
 pub struct QueryPendingSwapOutsResponse {
     /// pending_swap_outs is a list of all pending swap outs.
     #[prost(message, repeated, tag = "1")]
@@ -614,12 +626,12 @@ pub struct QueryPendingSwapOutsResponse {
     /// pagination defines the pagination in the response.
     #[prost(message, optional, tag = "2")]
     pub pagination:
-        ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageResponse>,
+        ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageResponse>,
 }
 /// PendingSwapOutWithTimeout is a pending swap out with its timeout.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.PendingSwapOutWithTimeout")]
+#[proto_message(type_url = "/provlabs.vault.v1.PendingSwapOutWithTimeout")]
 pub struct PendingSwapOutWithTimeout {
     /// request_id is the unique identifier for the pending swap out request.
     #[prost(uint64, tag = "1")]
@@ -634,17 +646,21 @@ pub struct PendingSwapOutWithTimeout {
 /// QueryVaultsRequest is the request message for the Query/Vaults endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryVaultsRequest")]
-#[proto_query(path = "/vault.v1.Query/Vaults", response_type = QueryVaultsResponse)]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryVaultsRequest")]
+#[proto_query(
+    path = "/provlabs.vault.v1.Query/Vaults",
+    response_type = QueryVaultsResponse
+)]
 pub struct QueryVaultsRequest {
     /// pagination defines an optional pagination for the request.
     #[prost(message, optional, tag = "1")]
-    pub pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+    pub pagination:
+        ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageRequest>,
 }
 /// QueryVaultsResponse is the response message for the Query/Vaults endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryVaultsResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryVaultsResponse")]
 pub struct QueryVaultsResponse {
     /// vaults is a list of all vaults.
     #[prost(message, repeated, tag = "1")]
@@ -652,13 +668,16 @@ pub struct QueryVaultsResponse {
     /// pagination defines the pagination in the response.
     #[prost(message, optional, tag = "2")]
     pub pagination:
-        ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageResponse>,
+        ::core::option::Option<super::super::super::cosmos::base::query::v1beta1::PageResponse>,
 }
 /// QueryVaultRequest is the request message for the Query/Vault endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryVaultRequest")]
-#[proto_query(path = "/vault.v1.Query/Vault", response_type = QueryVaultResponse)]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryVaultRequest")]
+#[proto_query(
+    path = "/provlabs.vault.v1.Query/Vault",
+    response_type = QueryVaultResponse
+)]
 pub struct QueryVaultRequest {
     /// id is the bech32 address of the vault or the vault's share denom to query.
     #[prost(string, tag = "1")]
@@ -667,7 +686,7 @@ pub struct QueryVaultRequest {
 /// QueryVaultResponse is the response message for the Query/Vault endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryVaultResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryVaultResponse")]
 pub struct QueryVaultResponse {
     /// vault is the requested vault.
     #[prost(message, optional, tag = "1")]
@@ -682,9 +701,9 @@ pub struct QueryVaultResponse {
 /// QueryEstimateSwapInRequest is the request message for the Query/EstimateSwapIn endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryEstimateSwapInRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryEstimateSwapInRequest")]
 #[proto_query(
-    path = "/vault.v1.Query/EstimateSwapIn",
+    path = "/provlabs.vault.v1.Query/EstimateSwapIn",
     response_type = QueryEstimateSwapInResponse
 )]
 pub struct QueryEstimateSwapInRequest {
@@ -693,16 +712,16 @@ pub struct QueryEstimateSwapInRequest {
     pub vault_address: ::prost::alloc::string::String,
     /// assets is the amount of underlying or payment denom to swap in.
     #[prost(message, optional, tag = "2")]
-    pub assets: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub assets: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// QueryEstimateSwapInResponse is the response message for the Query/EstimateSwapIn endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryEstimateSwapInResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryEstimateSwapInResponse")]
 pub struct QueryEstimateSwapInResponse {
     /// assets is the estimated amount of shares that would be received.
     #[prost(message, optional, tag = "1")]
-    pub assets: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub assets: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
     /// The block height when the estimate occurred.
     #[prost(int64, tag = "2")]
     pub height: i64,
@@ -713,9 +732,9 @@ pub struct QueryEstimateSwapInResponse {
 /// QueryEstimateSwapOutRequest is the request message for the Query/EstimateSwapOut endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryEstimateSwapOutRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryEstimateSwapOutRequest")]
 #[proto_query(
-    path = "/vault.v1.Query/EstimateSwapOut",
+    path = "/provlabs.vault.v1.Query/EstimateSwapOut",
     response_type = QueryEstimateSwapOutResponse
 )]
 pub struct QueryEstimateSwapOutRequest {
@@ -732,11 +751,11 @@ pub struct QueryEstimateSwapOutRequest {
 /// QueryEstimateSwapOutResponse is the response message for the Query/EstimateSwapOut endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.QueryEstimateSwapOutResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.QueryEstimateSwapOutResponse")]
 pub struct QueryEstimateSwapOutResponse {
     /// assets is the estimated amount of underlying assets that would be received.
     #[prost(message, optional, tag = "1")]
-    pub assets: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub assets: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
     /// The block height when the estimate occurred.
     #[prost(int64, tag = "2")]
     pub height: i64,
@@ -747,7 +766,7 @@ pub struct QueryEstimateSwapOutResponse {
 /// MsgCreateVaultRequest is the request message for the CreateVault endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgCreateVaultRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgCreateVaultRequest")]
 pub struct MsgCreateVaultRequest {
     /// admin is the creator and initial administrator of the vault.
     #[prost(string, tag = "1")]
@@ -769,7 +788,7 @@ pub struct MsgCreateVaultRequest {
 /// MsgCreateVaultResponse is the response message for the CreateVault endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgCreateVaultResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgCreateVaultResponse")]
 pub struct MsgCreateVaultResponse {
     /// vault_address is the bech32 address of the newly created vault.
     #[prost(string, tag = "1")]
@@ -778,7 +797,7 @@ pub struct MsgCreateVaultResponse {
 /// MsgSwapInRequest is the request message for depositing underlying assets into a vault in exchange for shares.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgSwapInRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgSwapInRequest")]
 pub struct MsgSwapInRequest {
     /// owner is the address initiating the swap in (deposit).
     #[prost(string, tag = "1")]
@@ -788,21 +807,21 @@ pub struct MsgSwapInRequest {
     pub vault_address: ::prost::alloc::string::String,
     /// assets is the amount of underlying assets to deposit.
     #[prost(message, optional, tag = "3")]
-    pub assets: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub assets: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// MsgSwapInResponse is the response message for a successful SwapIn.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgSwapInResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgSwapInResponse")]
 pub struct MsgSwapInResponse {
     /// shares_received is the amount of vault shares minted to the depositor.
     #[prost(message, optional, tag = "1")]
-    pub shares_received: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub shares_received: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// MsgSwapOutRequest is the request message for redeeming vault shares in exchange for underlying assets.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgSwapOutRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgSwapOutRequest")]
 pub struct MsgSwapOutRequest {
     /// owner is the address initiating the swap out (withdraw).
     #[prost(string, tag = "1")]
@@ -812,7 +831,7 @@ pub struct MsgSwapOutRequest {
     pub vault_address: ::prost::alloc::string::String,
     /// assets is the amount of underlying assets to withdraw.
     #[prost(message, optional, tag = "3")]
-    pub assets: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub assets: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
     /// redeem_denom selects the payout coin.
     /// - If empty, defaults to the vault’s underlying_asset.
     /// - Must be either the vault’s underlying_asset or its payment_denom.
@@ -822,7 +841,7 @@ pub struct MsgSwapOutRequest {
 /// MsgSwapOutResponse is the response message for the SwapOut endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgSwapOutResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgSwapOutResponse")]
 pub struct MsgSwapOutResponse {
     /// request_id is the unique identifier for the newly queued swap out request.
     #[prost(uint64, tag = "1")]
@@ -831,7 +850,7 @@ pub struct MsgSwapOutResponse {
 /// MsgUpdateMinInterestRateRequest is the request message for updating the minimum interest rate of a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgUpdateMinInterestRateRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgUpdateMinInterestRateRequest")]
 pub struct MsgUpdateMinInterestRateRequest {
     /// The address of the account authorized to update the minimum interest rate for the vault.
     #[prost(string, tag = "1")]
@@ -847,12 +866,12 @@ pub struct MsgUpdateMinInterestRateRequest {
 /// MsgUpdateMinInterestRateResponse is the response message for the UpdateMinInterestRate endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgUpdateMinInterestRateResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgUpdateMinInterestRateResponse")]
 pub struct MsgUpdateMinInterestRateResponse {}
 /// MsgUpdateMaxInterestRateRequest is the request message for updating the maximum interest rate of a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgUpdateMaxInterestRateRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgUpdateMaxInterestRateRequest")]
 pub struct MsgUpdateMaxInterestRateRequest {
     /// The address of the account authorized to update the maximum interest rate for the vault.
     #[prost(string, tag = "1")]
@@ -868,12 +887,12 @@ pub struct MsgUpdateMaxInterestRateRequest {
 /// MsgUpdateMaxInterestRateResponse is the response message for the UpdateMaxInterestRate endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgUpdateMaxInterestRateResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgUpdateMaxInterestRateResponse")]
 pub struct MsgUpdateMaxInterestRateResponse {}
 /// MsgUpdateInterestRateRequest is the request message for updating the annual interest rate of a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgUpdateInterestRateRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgUpdateInterestRateRequest")]
 pub struct MsgUpdateInterestRateRequest {
     /// admin is the address of the vault administrator.
     #[prost(string, tag = "1")]
@@ -888,12 +907,12 @@ pub struct MsgUpdateInterestRateRequest {
 /// MsgUpdateInterestRateResponse is the response message for the UpdateInterestRate endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgUpdateInterestRateResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgUpdateInterestRateResponse")]
 pub struct MsgUpdateInterestRateResponse {}
 /// MsgToggleSwapInRequest is the request message for enabling or disabling swap-in operations for a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgToggleSwapInRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgToggleSwapInRequest")]
 pub struct MsgToggleSwapInRequest {
     /// admin is the address of the vault administrator.
     #[prost(string, tag = "1")]
@@ -908,12 +927,12 @@ pub struct MsgToggleSwapInRequest {
 /// MsgToggleSwapInResponse is the response message for the ToggleSwapIn endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgToggleSwapInResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgToggleSwapInResponse")]
 pub struct MsgToggleSwapInResponse {}
 /// MsgToggleSwapOutRequest is the request message for enabling or disabling swap-out operations for a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgToggleSwapOutRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgToggleSwapOutRequest")]
 pub struct MsgToggleSwapOutRequest {
     /// admin is the address of the vault administrator.
     #[prost(string, tag = "1")]
@@ -928,12 +947,12 @@ pub struct MsgToggleSwapOutRequest {
 /// MsgToggleSwapOutResponse is the response message for the ToggleSwapOut endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgToggleSwapOutResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgToggleSwapOutResponse")]
 pub struct MsgToggleSwapOutResponse {}
 /// MsgDepositInterestFundsRequest is the request message for depositing funds to be used for paying interest.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgDepositInterestFundsRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgDepositInterestFundsRequest")]
 pub struct MsgDepositInterestFundsRequest {
     /// admin is the address of the account depositing the funds.
     #[prost(string, tag = "1")]
@@ -943,17 +962,17 @@ pub struct MsgDepositInterestFundsRequest {
     pub vault_address: ::prost::alloc::string::String,
     /// amount is the amount of funds to deposit.
     #[prost(message, optional, tag = "3")]
-    pub amount: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub amount: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// MsgDepositInterestFundsResponse is the response message for the DepositInterestFunds endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgDepositInterestFundsResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgDepositInterestFundsResponse")]
 pub struct MsgDepositInterestFundsResponse {}
 /// MsgWithdrawInterestFundsRequest is the request message for withdrawing unused interest funds.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgWithdrawInterestFundsRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgWithdrawInterestFundsRequest")]
 pub struct MsgWithdrawInterestFundsRequest {
     /// admin is the address of the vault administrator initiating the withdrawal.
     #[prost(string, tag = "1")]
@@ -963,17 +982,17 @@ pub struct MsgWithdrawInterestFundsRequest {
     pub vault_address: ::prost::alloc::string::String,
     /// amount is the amount of funds to withdraw.
     #[prost(message, optional, tag = "3")]
-    pub amount: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub amount: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// MsgWithdrawInterestFundsResponse is the response message for the WithdrawInterestFunds endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgWithdrawInterestFundsResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgWithdrawInterestFundsResponse")]
 pub struct MsgWithdrawInterestFundsResponse {}
 /// MsgDepositPrincipalFundsRequest is the request message for depositing principal funds into a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgDepositPrincipalFundsRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgDepositPrincipalFundsRequest")]
 pub struct MsgDepositPrincipalFundsRequest {
     /// admin is the address of the account depositing the funds.
     #[prost(string, tag = "1")]
@@ -983,17 +1002,17 @@ pub struct MsgDepositPrincipalFundsRequest {
     pub vault_address: ::prost::alloc::string::String,
     /// amount is the amount of funds to deposit.
     #[prost(message, optional, tag = "3")]
-    pub amount: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub amount: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// MsgDepositPrincipalFundsResponse is the response message for the DepositPrincipalFunds endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgDepositPrincipalFundsResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgDepositPrincipalFundsResponse")]
 pub struct MsgDepositPrincipalFundsResponse {}
 /// MsgWithdrawPrincipalFundsRequest is the request message for withdrawing principal funds from a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgWithdrawPrincipalFundsRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgWithdrawPrincipalFundsRequest")]
 pub struct MsgWithdrawPrincipalFundsRequest {
     /// admin is the address of the vault administrator initiating the withdrawal.
     #[prost(string, tag = "1")]
@@ -1003,17 +1022,17 @@ pub struct MsgWithdrawPrincipalFundsRequest {
     pub vault_address: ::prost::alloc::string::String,
     /// amount is the amount of funds to withdraw.
     #[prost(message, optional, tag = "3")]
-    pub amount: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub amount: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// MsgWithdrawPrincipalFundsResponse is the response message for the WithdrawPrincipalFunds endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgWithdrawPrincipalFundsResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgWithdrawPrincipalFundsResponse")]
 pub struct MsgWithdrawPrincipalFundsResponse {}
 /// MsgExpeditePendingSwapOutRequest is the request message for expediting a swap out from a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgExpeditePendingSwapOutRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgExpeditePendingSwapOutRequest")]
 pub struct MsgExpeditePendingSwapOutRequest {
     /// admin is the address of the vault administrator initiating the swap out.
     #[prost(string, tag = "1")]
@@ -1025,13 +1044,13 @@ pub struct MsgExpeditePendingSwapOutRequest {
 /// MsgExpeditePendingSwapOutResponse is the response message for the ExpeditePendingSwapOut endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgExpeditePendingSwapOutResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgExpeditePendingSwapOutResponse")]
 pub struct MsgExpeditePendingSwapOutResponse {}
 /// MsgPauseVaultRequest is the request message to pause a vault. When processed,
 /// the vault disables user-facing swap operations and records the provided reason.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgPauseVaultRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgPauseVaultRequest")]
 pub struct MsgPauseVaultRequest {
     /// admin is the address of the vault administrator initiating the pause.
     #[prost(string, tag = "1")]
@@ -1047,13 +1066,13 @@ pub struct MsgPauseVaultRequest {
 /// MsgPauseVaultResponse is the response message for the PauseVault endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgPauseVaultResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgPauseVaultResponse")]
 pub struct MsgPauseVaultResponse {}
 /// MsgUnpauseVaultRequest is the request message to unpause a vault. When processed,
 /// the vault re-enables user-facing swap operations (subject to existing flags).
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgUnpauseVaultRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgUnpauseVaultRequest")]
 pub struct MsgUnpauseVaultRequest {
     /// admin is the address of the vault administrator initiating the unpause.
     #[prost(string, tag = "1")]
@@ -1065,12 +1084,12 @@ pub struct MsgUnpauseVaultRequest {
 /// MsgUnpauseVaultResponse is the response message for the UnpauseVault endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgUnpauseVaultResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgUnpauseVaultResponse")]
 pub struct MsgUnpauseVaultResponse {}
 /// MsgSetBridgeAddressRequest is the request message for configuring the bridge address for a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgSetBridgeAddressRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgSetBridgeAddressRequest")]
 pub struct MsgSetBridgeAddressRequest {
     /// admin is the address of the vault administrator.
     #[prost(string, tag = "1")]
@@ -1085,12 +1104,12 @@ pub struct MsgSetBridgeAddressRequest {
 /// MsgSetBridgeAddressResponse is the response message for the SetBridgeAddress endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgSetBridgeAddressResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgSetBridgeAddressResponse")]
 pub struct MsgSetBridgeAddressResponse {}
 /// MsgToggleBridgeRequest is the request message for enabling or disabling the bridge for a vault.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgToggleBridgeRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgToggleBridgeRequest")]
 pub struct MsgToggleBridgeRequest {
     /// admin is the address of the vault administrator.
     #[prost(string, tag = "1")]
@@ -1105,12 +1124,12 @@ pub struct MsgToggleBridgeRequest {
 /// MsgToggleBridgeResponse is the response message for the ToggleBridge endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgToggleBridgeResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgToggleBridgeResponse")]
 pub struct MsgToggleBridgeResponse {}
 /// MsgBridgeMintSharesRequest is the request message for minting local share marker supply; must be signed by the configured bridge address.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgBridgeMintSharesRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgBridgeMintSharesRequest")]
 pub struct MsgBridgeMintSharesRequest {
     /// bridge is the signer and must match the vault's configured bridge_address.
     #[prost(string, tag = "1")]
@@ -1120,17 +1139,17 @@ pub struct MsgBridgeMintSharesRequest {
     pub vault_address: ::prost::alloc::string::String,
     /// shares is the amount of shares to mint into local marker supply.
     #[prost(message, optional, tag = "3")]
-    pub shares: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub shares: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// MsgBridgeMintSharesResponse is the response message for the BridgeMintShares endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgBridgeMintSharesResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgBridgeMintSharesResponse")]
 pub struct MsgBridgeMintSharesResponse {}
 /// MsgBridgeBurnSharesRequest is the request message for burning local share marker supply; must be signed by the configured bridge address.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgBridgeBurnSharesRequest")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgBridgeBurnSharesRequest")]
 pub struct MsgBridgeBurnSharesRequest {
     /// bridge is the signer and must match the vault's configured bridge_address.
     #[prost(string, tag = "1")]
@@ -1140,12 +1159,12 @@ pub struct MsgBridgeBurnSharesRequest {
     pub vault_address: ::prost::alloc::string::String,
     /// shares is the amount of shares to burn from local marker supply.
     #[prost(message, optional, tag = "3")]
-    pub shares: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+    pub shares: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
 }
 /// MsgBridgeBurnSharesResponse is the response message for the BridgeBurnShares endpoint.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, Copy, PartialEq, Eq, ::prost::Message, ::schemars::JsonSchema, CosmwasmExt)]
-#[proto_message(type_url = "/vault.v1.MsgBridgeBurnSharesResponse")]
+#[proto_message(type_url = "/provlabs.vault.v1.MsgBridgeBurnSharesResponse")]
 pub struct MsgBridgeBurnSharesResponse {}
 pub struct VaultQuerier<'a, Q: cosmwasm_std::CustomQuery> {
     querier: &'a cosmwasm_std::QuerierWrapper<'a, Q>,
@@ -1156,7 +1175,9 @@ impl<'a, Q: cosmwasm_std::CustomQuery> VaultQuerier<'a, Q> {
     }
     pub fn vaults(
         &self,
-        pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+        pagination: ::core::option::Option<
+            super::super::super::cosmos::base::query::v1beta1::PageRequest,
+        >,
     ) -> Result<QueryVaultsResponse, cosmwasm_std::StdError> {
         QueryVaultsRequest { pagination }.query(self.querier)
     }
@@ -1169,7 +1190,7 @@ impl<'a, Q: cosmwasm_std::CustomQuery> VaultQuerier<'a, Q> {
     pub fn estimate_swap_in(
         &self,
         vault_address: ::prost::alloc::string::String,
-        assets: ::core::option::Option<super::super::cosmos::base::v1beta1::Coin>,
+        assets: ::core::option::Option<super::super::super::cosmos::base::v1beta1::Coin>,
     ) -> Result<QueryEstimateSwapInResponse, cosmwasm_std::StdError> {
         QueryEstimateSwapInRequest {
             vault_address,
@@ -1192,7 +1213,9 @@ impl<'a, Q: cosmwasm_std::CustomQuery> VaultQuerier<'a, Q> {
     }
     pub fn pending_swap_outs(
         &self,
-        pagination: ::core::option::Option<super::super::cosmos::base::query::v1beta1::PageRequest>,
+        pagination: ::core::option::Option<
+            super::super::super::cosmos::base::query::v1beta1::PageRequest,
+        >,
     ) -> Result<QueryPendingSwapOutsResponse, cosmwasm_std::StdError> {
         QueryPendingSwapOutsRequest { pagination }.query(self.querier)
     }
